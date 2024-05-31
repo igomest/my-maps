@@ -1,5 +1,5 @@
-import { ConfigProvider } from "antd";
-import { Header } from "./components/Header";
+import { ConfigProvider, theme } from "antd";
+import { AppLayout } from "./components/AppLayout";
 import "antd/dist/reset.css";
 
 function App() {
@@ -10,9 +10,10 @@ function App() {
           colorPrimary: "#0958d9",
         },
         cssVar: true,
+        algorithm: theme.darkAlgorithm
       }}
     >
-      <Header />
+      <AppLayout />
     </ConfigProvider>
   );
 }

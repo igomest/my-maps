@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/colors": "^7.0.2",
+    "@tabler/core": "^1.0.0-beta20",
+    "@tabler/icons-react": "^3.5.0",
     "antd": "^5.17.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
