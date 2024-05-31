@@ -1,14 +1,8 @@
-import React from "react";
-import {
-  LaptopOutlined,
-  NotificationOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
-import type { MenuProps } from "antd";
-import { Button, Flex, Layout, Select, Typography, theme } from "antd";
+import { Button, Flex, Layout, Select, Space, Typography, theme } from "antd";
 import { IconMap } from "@tabler/icons-react";
+import { MapContent } from "../MapContent";
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Content, Sider } = Layout;
 
 export const AppLayout = () => {
   const {
@@ -17,24 +11,6 @@ export const AppLayout = () => {
 
   return (
     <Layout>
-      <Header
-        style={{
-          display: "flex",
-          alignItems: "center",
-          background: "#262626",
-          padding: "1rem",
-        }}
-      >
-        <Flex justify="space-between" align="center" gap="small">
-          <IconMap size="2rem" color="white" />
-          <Typography.Title
-            style={{ color: "white", marginTop: "0.4rem" }}
-            level={3}
-          >
-            My Maps
-          </Typography.Title>
-        </Flex>
-      </Header>
       <Content>
         <Layout
           style={{
@@ -45,7 +21,20 @@ export const AppLayout = () => {
           }}
         >
           <Sider style={{ background: "#262626" }} width={350}>
-            <Flex vertical style={{ padding: "1rem", gap: "2rem" }}>
+            <Flex
+              vertical
+              style={{ padding: "1rem", gap: "2rem", position: "relative" }}
+            >
+              <Space>
+                <IconMap size="2rem" color="white" />
+                <Typography.Title
+                  style={{ color: "white", marginTop: "0.4rem" }}
+                  level={3}
+                >
+                  My Maps
+                </Typography.Title>
+              </Space>
+
               <Select
                 defaultValue="lucy"
                 style={{ width: "100%" }}
@@ -63,8 +52,10 @@ export const AppLayout = () => {
               </Button>
             </Flex>
           </Sider>
-          <Content style={{ padding: "0 24px", minHeight: 280 }}>
-            Content
+          <Content
+            style={{ minHeight: 280, background: "#262626", padding: "1rem" }}
+          >
+            <MapContent />
           </Content>
         </Layout>
       </Content>
